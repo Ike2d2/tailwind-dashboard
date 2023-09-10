@@ -1,3 +1,51 @@
 @tailwind base;
 @taliwind components;
 @tailwind utilities;
+
+body {
+    background: url(resources/images/pillars.png) no-repeat center/cover;
+}
+
+#side,
+main,
+nav {
+    border-color: rgba(255, 255, 255, .1);
+}
+
+#side,
+nav {
+    background-color: rgba(255, 255, 255, .02);
+}
+
+main {
+    background-color: rgba(255, 255, 255, .05);
+}
+
+#featured {
+    background: url(resources/images/pillars.png) no-repeat center/cover;
+}
+
+#popWrap>div {
+    background: url(resources/images/pillars.png) no-repeat center/cover;
+}
+
+#contWrap>div {
+    background: url(resources/images/pillars.png) no-repeat center/cover;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 3px;
+    background: white;
+}
+
+input[type="range"]::-moz-range-track {
+    height: 3px;
+    background: white;
+}
