@@ -10,170 +10,183 @@
 </head>
 
 <body class="h-screen p-10 text-white">
-  <div class="flex items-center justify-center h-full space-x-10">
-    <nav class="flex flex-col backdrop-blur w-24 h-96 rounded-full border-2 justify-around items-center">
-      <a><i class="fa-regular fa-circle-play"></i></a>
-      <a><i>[Grid]</i></a>
-      <a><i>[Screen]</i></a>
-      <a><i>[AirPlay]</i></a>
-      <a><i>[House]</i></a>
-      <a><i>[Search]</i></a>
+  <div class="flex items-center justify-center h-full space-x-6">
+    <nav class="flex flex-col backdrop-blur w-16 h-72 rounded-full border-2 justify-around items-center py-2">
+      <a id="selRed" class="rounded-full flex items-center justify-center w-10 h-10"><i class="fa-regular fa-circle-play"></i></a>
+      <a><i class="fa-solid fa-border-all"></i></a>
+      <a><i class="fa-solid fa-display"></i></a>
+      <a><i class="fa-brands fa-chromecast"></i></a>
+      <a><i class="fa-solid fa-house-chimney"></i></a>
+      <a><i class="fa-solid fa-magnifying-glass"></i></a>
     </nav>
-    <div class="flex w-full h-5/6">
-      <div id="side" class="flex flex-col w-96 backdrop-blur-xl rounded-l-3xl border-y-2 border-l-2 p-8">
-        <img src="resources/images/netflix.png">
-        <a><i class="fa-solid fa-circle-play" style="color: #E50914"></i><span>Browse</span></a>
-        <a><i>[Heart]</i><span>Wishlist</span></a>
-        <a><i>[Calendar]</i><span>Coming Soon</span></a>
-        <div id="trailers">
-          <h1>New Trailers [Fire]</h1>
-          <div class="trailer flex flex-col justify-end">
-            <div class="backdrop-blur-xl">
+    <div id="mainWrap" class="flex w-full max-w-6xl h-5/6">
+      <div id="side"
+        class="flex flex-col w-72 backdrop-blur-xl rounded-l-3xl border-y-2 border-l-2 p-6 justify-between">
+        <img class="w-2/3" src="resources/images/netflix.png">
+        <div class="flex flex-col space-y-3">
+          <a class="space-x-2"><i class="fa-solid fa-circle-play" style="color: #E50914"></i><span>Browse</span></a>
+          <a class="space-x-2"><i class="fa-regular fa-heart"></i><span>Wishlist</span></a>
+          <a class="space-x-2"><i class="fa-regular fa-calendar"></i><span>Coming Soon</span></a>
+        </div>
+        <div id="trailers" class="space-y-4">
+          <h1>New Trailers &#128293;</h1>
+          <div id="trailerOne" class="trailer flex flex-col justify-end">
+            <footer class="backdrop-blur-xl h-12 rounded-b-xl">
               <span>Shadow and Bone</span>
-              <button><i>[Play]</i></button>
-            </div>
+              <button class="rounded-full"><i class="fa-solid fa-play"></i></button>
+            </footer>
           </div>
-          <div class="trailer flex flex-col justify-end">
-            <div class="backdrop-blur-xl">
+          <div id="trailerTwo" class="trailer flex flex-col justify-end">
+            <footer class="backdrop-blur-xl h-12 rounded-b-xl">
               <span>The Night Agent</span>
-              <button><i>[Play]</i></button>
-            </div>
+              <button class="rounded-full"><i class="fa-solid fa-play"></i></button>
+            </footer>
           </div>
-          <div class="trailer flex flex-col justify-end">
-            <div class="backdrop-blur-xl">
+          <div id="trailerThree" class="trailer flex flex-col justify-end">
+            <footer class="backdrop-blur-xl h-12 rounded-b-xl">
               <span>The Witcher</span>
-              <button><i>[Play]</i></button>
-            </div>
+              <button class="rounded-full"><i class="fa-solid fa-play"></i></button>
+            </footer>
           </div>
         </div>
       </div>
-      <main class="w-full backdrop-blur-xl rounded-r-3xl border-2">
-        <header class="flex">
-          <div id="pageBtns">
-            <i>[Left Arrow]</i>
-            <i>[Right Arrow]</i>
+      <main class="w-full backdrop-blur-xl rounded-r-3xl border-2 px-6 py-4">
+        <header class="flex mb-4 items-center justify-between">
+          <div id="headerL" class="flex space-x-10 items-center">
+            <div class="space-x-4">
+              <i class="fa-solid fa-chevron-left"></i>
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div id="search" class="flex items-center h-10 rounded-full px-4 space-x-3">
+              <i class="fa-solid fa-microphone"></i>
+              <input type="text" placeholder="Search...">
+            </div>
           </div>
-          <div id="search">
-            <i>[Mic]</i>
-            <input type="text">
-          </div>
-          <button><i>[Bell]</i><i id="badge">[Circle]</i></button>
-          <div id="user" class="flex">
-            <img alt="profile picture">
-            <div class="flex flex-col">
-              <span>Isaac S.</span>
-              <span>@isaacstark</span>
+          <div id="headerR" class="flex items-center space-x-6">
+            <button id="notif" class="relative flex justify-center items-center w-10 h-10 rounded-full">
+              <i id="bell" class="fa-regular fa-bell"></i>
+              <i id="badge" class="fa-solid fa-circle"></i>
+            </button>
+            <div id="user" class="flex items-center rounded-full py-2 px-4">
+              <img class="w-10 h-10 rounded-full border-2" src="resources/images/pfp.png" alt="profile picture">
+              <div class="flex flex-col justify-center mx-2">
+                <span class="font-bold">Isaac S.</span>
+                <span class="text-sm">@isaacstark</span>
+              </div>
             </div>
           </div>
         </header>
-        <div id="featured" class="flex w-full h-64 items-end">
-          <footer class="flex justify-between w-full">
-            <div class="flex">
-              <button>Watch</button>
-              <button><i>[Plus]</i></button>
-            </div>
-            <div class="flex">
-              <img class="w-20 h-10" src="resources/images/pillars.png" alt="featured image one">
-              <img class="w-20 h-10" src="resources/images/pillars.png" alt="featured image two">
-              <img class="w-20 h-10" src="resources/images/pillars.png" alt="featured image three">
-            </div>
-          </footer>
-        </div>
-        <div>
-          <h1>Popcorn Mania</h1>
-          <div id="popWrap" class="flex">
-            <div class="flex flex-col">
-              <footer class="flex">
-                <div class="flex flex-col">
-                  <h2>[Title]</h2>
-                  <div class="flex">
-                    <span>[Year]</span>
-                    <span>[Rating]</span>
-                    <span>[Length]</span>
+        <div id="rows" class="flex flex-col justify-between">
+          <div id="featured" class="flex w-full h-64 items-end rounded-2xl py-4 px-8">
+            <footer class="flex justify-between w-full">
+              <div class="flex space-x-2 items-center text-center">
+                <button id="watch" class="rounded-lg px-6 h-8">Watch</button>
+                <button id="plus" class="rounded-lg px-4 h-8 flex justify-center items-center"><i
+                    class="fa-solid fa-plus"></i></button>
+              </div>
+              <div id="featImgs" class="flex space-x-4 items-end">
+                <img src="resources/images/pillars.png" alt="featured image one">
+                <img src="resources/images/pillars.png" alt="featured image two">
+                <img src="resources/images/pillars.png" alt="featured image three">
+              </div>
+            </footer>
+          </div>
+          <div>
+            <h1>Popcorn Mania</h1>
+            <div id="popWrap" class="flex space-x-3">
+              <div class="pop flex flex-col justify-end">
+                <footer class="flex">
+                  <div class="flex flex-col">
+                    <h2>[Title]</h2>
+                    <div class="flex">
+                      <span>[Year]</span>
+                      <span>[Rating]</span>
+                      <span>[Length]</span>
+                    </div>
                   </div>
-                </div>
-                <i>[3 Dots]</i>
-              </footer>
-            </div>
-            <div class="flex flex-col">
-              <footer class="flex">
-                <div class="flex flex-col">
-                  <h2>[Title]</h2>
-                  <div class="flex">
-                    <span>[Year]</span>
-                    <span>[Rating]</span>
-                    <span>[Length]</span>
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </footer>
+              </div>
+              <div class="pop flex flex-col justify-end">
+                <footer class="flex">
+                  <div class="flex flex-col">
+                    <h2>[Title]</h2>
+                    <div class="flex">
+                      <span>[Year]</span>
+                      <span>[Rating]</span>
+                      <span>[Length]</span>
+                    </div>
                   </div>
-                </div>
-                <i>[3 Dots]</i>
-              </footer>
-            </div>
-            <div class="flex flex-col">
-              <footer class="flex">
-                <div class="flex flex-col">
-                  <h2>[Title]</h2>
-                  <div class="flex">
-                    <span>[Year]</span>
-                    <span>[Rating]</span>
-                    <span>[Length]</span>
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </footer>
+              </div>
+              <div class="pop flex flex-col justify-end">
+                <footer class="flex">
+                  <div class="flex flex-col">
+                    <h2>[Title]</h2>
+                    <div class="flex">
+                      <span>[Year]</span>
+                      <span>[Rating]</span>
+                      <span>[Length]</span>
+                    </div>
                   </div>
-                </div>
-                <i>[3 Dots]</i>
-              </footer>
-            </div>
-            <div class="flex flex-col">
-              <footer class="flex">
-                <div class="flex flex-col">
-                  <h2>[Title]</h2>
-                  <div class="flex">
-                    <span>[Year]</span>
-                    <span>[Rating]</span>
-                    <span>[Length]</span>
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </footer>
+              </div>
+              <div class="pop flex flex-col justify-end">
+                <footer class="flex">
+                  <div class="flex flex-col">
+                    <h2>[Title]</h2>
+                    <div class="flex">
+                      <span>[Year]</span>
+                      <span>[Rating]</span>
+                      <span>[Length]</span>
+                    </div>
                   </div>
-                </div>
-                <i>[3 Dots]</i>
-              </footer>
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </footer>
+              </div>
             </div>
           </div>
-        </div>
-        <div>
-          <h1>Continue Watching</h1>
-          <div id="contWrap" class="flex">
-            <div class="flex flex-col">
-              <i>[Play]</i>
-              <footer class="flex">
-                <div class="flex flex-col">
-                  <h2>[Title]</h2>
-                  <input type="range">
-                </div>
-              </footer>
-            </div>
-            <div class="flex flex-col">
-              <i>[Play]</i>
-              <footer class="flex">
-                <div class="flex flex-col">
-                  <h2>[Title]</h2>
-                  <input type="range">
-                </div>
-              </footer>
-            </div>
-            <div class="flex flex-col">
-              <i>[Play]</i>
-              <footer class="flex">
-                <div class="flex flex-col">
-                  <h2>[Title]</h2>
-                  <input type="range">
-                </div>
-              </footer>
-            </div>
-            <div class="flex flex-col">
-              <i>[Play]</i>
-              <footer class="flex">
-                <div class="flex flex-col">
-                  <h2>[Title]</h2>
-                  <input type="range">
-                </div>
-              </footer>
+          <div>
+            <h1>Continue Watching</h1>
+            <div id="contWrap" class="flex space-x-3">
+              <div class="cont flex flex-col justify-end">
+                <i class="fa-solid fa-play rounded-full py-1 px-1.5"></i>
+                <footer class="flex">
+                  <div class="flex flex-col w-full">
+                    <h3>The Expanse</h3>
+                    <progress value="25" max="100"></progress>
+                  </div>
+                </footer>
+              </div>
+              <div class="cont flex flex-col justify-end">
+                <i class="fa-solid fa-play rounded-full py-1 px-1.5"></i>
+                <footer class="flex">
+                  <div class="flex flex-col w-full">
+                    <h3>For All Mankind</h3>
+                    <input type="range">
+                  </div>
+                </footer>
+              </div>
+              <div class="cont flex flex-col justify-end">
+                <i class="fa-solid fa-play rounded-full py-1 px-1.5"></i>
+                <footer class="flex">
+                  <div class="flex flex-col w-full">
+                    <h3>Star Wars: A New Hope</h3>
+                    <input type="range">
+                  </div>
+                </footer>
+              </div>
+              <div class="cont flex flex-col justify-end">
+                <i class="fa-solid fa-play rounded-full py-1 px-1.5"></i>
+                <footer class="flex">
+                  <div class="flex flex-col w-full">
+                    <h3>Ready Player One</h3>
+                    <input type="range">
+                  </div>
+                </footer>
+              </div>
             </div>
           </div>
         </div>
