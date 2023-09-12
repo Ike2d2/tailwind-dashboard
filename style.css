@@ -667,6 +667,12 @@ video {
   margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
 .space-y-3 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
@@ -737,6 +743,11 @@ video {
   padding-right: 0.375rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -765,6 +776,14 @@ video {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.pb-1 {
+  padding-bottom: 0.25rem;
+}
+
+.pb-1\.5 {
+  padding-bottom: 0.375rem;
 }
 
 .text-center {
@@ -820,14 +839,6 @@ main {
   height: 89%;
 }
 
-#featured {
-  background: url(resources/images/pillars.png) no-repeat center/cover;
-}
-
-#popWrap>div {
-  background: url(resources/images/pillars.png) no-repeat center/cover;
-}
-
 .trailer {
   border-radius: 12px;
   height: 8rem;
@@ -861,18 +872,50 @@ main {
 }
 
 #trailerOne {
-  background: url(resources/images/pillars.png) no-repeat center/cover;
+  background: url(resources/images/barbie.jpg) no-repeat center/cover;
 }
 
 #trailerTwo {
-  background: url(resources/images/pillars.png) no-repeat center/cover;
+  background: url(resources/images/oppenheimer.jpg) no-repeat center/cover;
 }
 
 #trailerThree {
-  background: url(resources/images/pillars.png) no-repeat center/cover;
+  background: url(resources/images/elemental.jpg) no-repeat center/cover;
 }
 
-#user img{
+#popOne {
+  background: url(resources/images/breaking-bad.jpg) no-repeat center/cover;
+}
+
+#popTwo {
+  background: url(resources/images/foundation.jpg) no-repeat center/cover;
+}
+
+#popThree {
+  background: url(resources/images/game-of-thrones.png) no-repeat center/cover;
+}
+
+#popFour {
+  background: url(resources/images/stranger-things.jpg) no-repeat center/cover;
+}
+
+#contOne {
+  background: url(resources/images/expanse.jpg) no-repeat center/cover;
+}
+
+#contTwo {
+  background: url(resources/images/mankind.jpg) no-repeat center/cover;
+}
+
+#contThree {
+  background: url(resources/images/starwars.jpg) no-repeat center/cover;
+}
+
+#contFour {
+  background: url(resources/images/ready-player-one.jpg) no-repeat center/cover;
+}
+
+#user img {
   border-color: #E50914;
 }
 
@@ -881,10 +924,12 @@ main {
 }
 
 .fa-chevron-left {
-  color: rgba(255,255,255,.2);
+  color: rgba(255, 255, 255, .2);
 }
 
-#notif,#user,.trailer footer button{
+#notif,
+#user,
+.trailer footer button {
   background-color: rgba(255, 255, 255, .3);
 }
 
@@ -920,7 +965,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 h3 {
@@ -938,23 +983,46 @@ h3 {
   background-color: #99a;
 }
 
+#featured {
+  background: url(resources/images/EEA-1.jpg) no-repeat center/cover;
+}
+
 #featImgs img {
   height: 2.5rem;
   width: 5rem;
 }
 
-#featImgs img,.pop,.cont{
+#featImgs img,
+.pop,
+.cont {
   border-radius: .5rem;
 }
 
 #featImgs img:first-child {
   height: 3rem;
   width: 6rem;
+  box-shadow: -3px 3px 2px rgba(230, 10, 21, 1);
 }
 
 .pop {
   width: 100%;
-  height: 8rem;
+  height: 9rem;
+  box-shadow: inset 0px -60px 32px rgba(0, 0, 0, .9);
+}
+
+.pop>footer>div>div {
+  font-size: .7rem;
+}
+
+.pop i {
+  font-size: 1.2rem;
+  margin-right: 8px;
+}
+
+.pop footer {
+  background-color: black;
+  border-bottom-right-radius: .5rem;
+  border-bottom-left-radius: .5rem;
 }
 
 .cont {
@@ -962,22 +1030,45 @@ h3 {
   height: 6rem;
   position: relative;
   background: url(resources/images/pillars.png) no-repeat center/cover;
-  padding: 0px 4px;
+  padding: 8px 6px;
   border-radius: 8px;
+  box-shadow: inset 0px -20px 24px rgba(0, 0, 0, .7);
 }
 
-.cont i{
+.cont i {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0,0,0,.3);
+  background-color: rgba(0, 0, 0, .3);
 }
 
 #selRed {
   background-color: #E50914;
 }
 
-progress {
-  color:#E50914;
+progress[value] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  margin: none;
+  border-radius: 9999px;
+  background: white;
+  height: 3px;
+}
+
+progress[value]::-moz-progress-bar {
+  border-radius: 9999px;
+  background-color: #E50914;
+}
+
+progress[value]::-webkit-progress-bar {
+  border-radius: 9999px;
+  background-color: white;
+}
+
+progress[value]::-webkit-progress-value {
+  border-radius: 9999px;
+  background-color: #E50914;
 }
