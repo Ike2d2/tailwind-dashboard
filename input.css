@@ -72,6 +72,7 @@ main {
 
 #popOne {
     background: url(resources/images/breaking-bad.jpg) no-repeat center/cover;
+    transition: transform 0.5s;
 }
 
 #popTwo {
@@ -194,9 +195,9 @@ h3 {
     box-shadow: inset 0px -60px 32px rgba(0, 0, 0, .9);   
 }
 
-.pop:hover, .cont:hover, #featImgs img:hover, .trailer:hover {
+/* .pop:hover, .cont:hover, #featImgs img:hover, .trailer:hover {
     transform: scale(1.1);
-}
+} */
 
 .pop>footer>div>div {
     font-size: .7rem;
@@ -259,4 +260,9 @@ progress[value]::-webkit-progress-bar {
 progress[value]::-webkit-progress-value {
     border-radius: 9999px;
     background-color: #E50914;
+}
+
+#tile {
+    perspective: 25px;
+    width: 100%;
 }
